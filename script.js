@@ -1,5 +1,7 @@
 'use strict';
 
+// Object Copy
+
 let mainObj = {
     inGoodResolution: true,
     sizeX: 1920,
@@ -17,7 +19,27 @@ newObject.type = "png";
 console.log(mainObj);
 console.log(newObject);
 
+// Massive Copy
+
+let arr = [1, 3, 4, 5, 8, 9, "Error"];
+
+const newMassive = arrClone(arr);
+newMassive[0] = true;
+
+console.log(arr);
+console.log(newMassive);
+
 // Functions
+
+function arrClone(mainArr) {
+    let arrCopy = [];
+
+    for(let key in mainArr){
+        arrCopy[key] = mainArr[key];
+    }
+
+    return arrCopy;
+}
 
 function objCopy(mainObject) {
     let newObject = {};
